@@ -47,7 +47,7 @@
     font-weight: 700;
     background-color: #1764c9;
     border-radius:3vw;
-    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 1px 0 #1764c9, 0 1px 1px 0 #1764c9;
 }
 .saved_review{
   text-align: left;

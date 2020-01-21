@@ -18,8 +18,10 @@ class App extends Component {
   }
   componentDidMount(){
   var count = localStorage.getItem("review_count");
-  if(count!==null&&count!==undefined&&count!==""){
+  if(count!==null&&count!==undefined&&count!==""&&count>0){
     this.setState({showReviews:"block"})
+  }else{
+    this.setState({showReviews:"none"})
   }
 }
 handleDeleteReview=(e)=>{
@@ -48,7 +50,7 @@ handleShowAddReviewClick=(e)=>{
         </div>
         <div className="saved_review" style={{display:this.state.showReviews}}>
         <p className="text_header" style={{color:"#FFFFFF"}}>REVIEWS</p>
-          <SavedReviews showReviews={this.state.showReviews}/>
+          <SavedReviews/>
         </div>
         <div style={{zIndex:"2",bottom:0,alignSelf:"center",textAlign:"center",marginBottom:"3vw",display:this.state.showReviews }}>
             <p style={{fontWeight:900}}>Delete All</p>

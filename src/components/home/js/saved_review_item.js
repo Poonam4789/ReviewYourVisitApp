@@ -7,7 +7,6 @@ class SavedReviews extends React.Component {
         super(props)
         this.textAreaRef = React.createRef();
         this.state={
-        showReviews:props.showReviews,   
         deleteIcon:require('../../images/delete.png'),
         savedReviews:[],
         isDirty: false,
@@ -32,14 +31,15 @@ class SavedReviews extends React.Component {
         );
     }
     componentDidMount(){
-        var totalReviews = localStorage.getItem("review_count");
-        console.log(totalReviews);
+    
         var list = IndexDB.home_api.toArray().then((data)=>{
             console.log(data)
+           if(data.length>0){
            var reviewList= data.map((data)=>{
                return this.createUI(data)
             });
             this.setState({savedReviews:reviewList});
+        }
         });
         console.log(list);
     }
@@ -118,7 +118,11 @@ class SavedReviews extends React.Component {
     handleDeleteReview =(id,e)=>{
         console.log("delete "+id);
         IndexDB.home_api.delete(id);
-        window.location="/";
+        localStorage.setItem(
+            "review_count",
+            parseInt(localStorage.getItem("review_count")-1)
+          );
+            window.location="/";
     }
     createUI=(result)=>{
         console.log(result.ID)
@@ -142,11 +146,16 @@ class SavedReviews extends React.Component {
       
     }
     render(){
+        console.log(this.state.savedReviews.length)
+        if(this.state.savedReviews.length>0){
         return (
             <div className="savedcard" style={{width:"80%",marginTop:"5vw"}}>
                 {this.state.savedReviews}
              </div>
         )
+        }else{
+            return(<div></div>)
+        }
     }
 }
 export default SavedReviews;

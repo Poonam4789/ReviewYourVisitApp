@@ -27,6 +27,7 @@ class App extends Component {
 handleDeleteReview=(e)=>{
   console.log("inside click")
   IndexDB.home_api.clear();
+  localStorage.clear();
   this.setState({showReviews:"none"})
   window.location="/";
 }
@@ -43,19 +44,21 @@ handleShowAddReviewClick=(e)=>{
   return (
     <div className="App">
       <header className="App-header">
+        <div style={{display:"flex",flexDirection:"column"}}>
       <button type="button" id="show_add_review" name="show_add_review"  style={{display:this.state.toggleAddReviewButtonVisibility}}
        className="showAddReview" onClick={this.handleShowAddReviewClick}>+ Add Review</button>
+
+          <button type="button" id="delete_all" name="delete_all"  style={{display:this.state.showReviews}}
+       className="delete_all"onClick={this.handleDeleteReview}>- Delete All</button>
+
+       </div>
         <div className="container" style={{display:this.state.addReviewContainer}}>
           <ItemCardView/>
         </div>
-        <div className="saved_review" style={{display:this.state.showReviews}}>
+        <div className="saved_review" style={{display:this.state.showReviews,textAlign:"left"}}>
         <p className="text_header" style={{color:"#FFFFFF"}}>REVIEWS</p>
           <SavedReviews/>
         </div>
-        <div style={{zIndex:"2",bottom:0,alignSelf:"center",textAlign:"center",marginBottom:"3vw",display:this.state.showReviews }}>
-            <p style={{fontWeight:900}}>Delete All</p>
-            <img src={this.state.deleteIcon}  style={{width:"3vw",height:"3vw"}} onClick={this.handleDeleteReview} alt="delete"/>
-            </div>
       </header>
     </div>
   );

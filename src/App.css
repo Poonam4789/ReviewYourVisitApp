@@ -49,6 +49,19 @@
     border-radius:3vw;
     box-shadow: 0 0 1px 0 #1764c9, 0 1px 1px 0 #1764c9;
 }
+.delete_all{
+  position: absolute;
+  right:0;
+  width: fit-content;
+  padding: 0.9vw;
+  margin:2vw;
+  font-size:1.5vw;
+  color: #ffffff;
+  font-weight: 700;
+  background-color: #1764c9;
+  border-radius:3vw;
+  box-shadow: 0 0 1px 0 #1764c9, 0 1px 1px 0 #1764c9;
+}
 .saved_review{
   text-align: left;
 }

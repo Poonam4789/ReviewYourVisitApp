@@ -7,7 +7,7 @@
 .container {
     width: 100vw;
     height: fit-content;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .card {
@@ -18,9 +18,10 @@
     background-color: white;
     width: 30vw;
     height: fit-content;
-    border-radius:2vw;
+    border-radius: 2vw;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
 }
+
 .savedcard {
     text-align: left;
     margin-left: 5vw;
@@ -30,9 +31,10 @@
     border-radius: 1.125vw;
     background-color: #f9f9f9;
     height: fit-content;
-    border-radius:2vw;
+    border-radius: 2vw;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
 }
+
 .thumb_imagesize {
     height: 100vh;
     width: fit-content;
@@ -41,69 +43,135 @@
     object-fit: "contain";
     background-repeat: "no-repeat";
 }
-.text_header{
+
+.text_header {
     padding: 1vw;
     margin: 0;
-    font-size:2vw;
+    font-size: 2vw;
     color: #1764c9;
     font-weight: 900;
     text-align: center;
 }
+
 .text_heading {
     padding: 0;
     margin: 0;
-    font-size:1vw;
+    font-size: 1vw;
     color: #000000;
     font-weight: 400;
     text-align: left;
 }
-.input_text{
+
+.input_text {
     width: 30vw;
     padding: 0;
     margin: 0;
-    margin-bottom:1vw;
-    font-size:1.5vw;
+    margin-bottom: 1vw;
+    font-size: 1.5vw;
     color: #000000;
     font-weight: 400;
     text-align: left;
     border: none;
-    border-bottom:solid 0.1vw  #1764c9;
+    border-bottom: solid 0.1vw #1764c9;
 }
 
-.submit{
+.submit {
     width: 10vw;
     padding: 0.7vw;
     text-align: center;
-    margin:0 auto;
-    font-size:1.5vw;
+    margin: 0 auto;
+    font-size: 1.5vw;
     color: #ffffff;
     font-weight: 700;
     text-align: center;
     justify-content: center;
     background-color: #1764c9;
-    border-radius:3vw;
+    border-radius: 3vw;
     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
 }
-.submit:focus {outline:0;}
 
-.saved_card_container{
+.submit:focus {
+    outline: 0;
+}
+
+.saved_card_container {
     padding: 2vw;
     background-color: #ffffff;
     height: fit-content;
-    border-radius:1vw;
+    border-radius: 1vw;
     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
     margin-bottom: 1vw;
     margin-top: 1vw;
 }
-.saved_text_heading{
-    font-size:1.25vw;
+
+.saved_text_heading {
+    font-size: 1.25vw;
     color: #1764c9;
     font-weight: 900;
     text-align: left;
 }
-.saved_text_value{
-    font-size:1.25vw;
+
+.saved_textarea_heading {
+    font-size: 1.25vw;
+    color: #1764c9;
+    font-weight: 900;
+    text-align: left;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 3.5vw;
+}
+
+ .saved_textarea_heading .tooltiptext {
+    visibility: visible;
+    width: 100px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.saved_textarea_heading .tooltiptext::after {
+    visibility: visible;
+    opacity: 1;
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+
+.saved_textarea_heading:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.div_review_comment{
+    width: 100px;
+    padding: 5px 0;
+}
+.saved_text_value {
+    font-size: 1.25vw;
     color: #21344d;
     font-weight: 700;
-    text-align: left; 
+    text-align: left;
+}
+.review_comment{
+    width: 100px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1vw;
+    font-size: 1.5vw;
+    color: #000000;
+    font-weight: 400;
+    text-align: left;
+    border: solid 0.1vw #1764c9;
 }
